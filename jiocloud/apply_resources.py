@@ -4,7 +4,6 @@ import os
 import time
 import utils
 import yaml
-from novaclient import client as novaclient
 
 """
 Parses a specification of nodes to install and makes it so

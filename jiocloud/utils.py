@@ -3,6 +3,7 @@ import argparse
 import IPy
 import os
 from novaclient import client as novaclient
+import constants
 
 """
 Various utils
@@ -19,7 +20,7 @@ def get_nova_creds_from_env():
     return d
 
 def get_nova_client():
-    return novaclient.Client("1.1", **get_nova_creds_from_env())
+    return novaclient.Client(constants.NOVA_CLIENT_VERSION, **get_nova_creds_from_env())
 
 def is_rfc1918(ip_string):
     return IPy.IP(ip_string).iptype() != "PUBLIC"
